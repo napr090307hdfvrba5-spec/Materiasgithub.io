@@ -1,0 +1,206 @@
+/* estilos-materias.css */
+/* Usando la paleta de colores proporcionada */
+
+:root {
+    --color-primary: #6A4C93; /* Morado Principal */
+    --color-neutral-dark: #7F8C8D; /* Gris Pizarra */
+    --color-accent-gold: #D4AF37; /* Dorado Viejo */
+    --color-accent-lime: #C1D72F; /* Verde Lima Apagado */
+    --color-neutral-warm: #E6D3B9; /* Beige Cálido */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --font-family: 'Arial', sans-serif;
+    --font-size-base: 16px;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    background-color: var(--color-neutral-warm);
+    color: var(--color-neutral-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header h2 {
+    margin: 5px 0;
+    font-size: 1.5em;
+}
+
+.profesor, .docente {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+.btn-volver, .boton-regreso {
+    background-color: var(--color-accent-gold);
+    color: var(--color-black);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-volver:hover, .boton-regreso:hover {
+    background-color: var(--color-accent-lime);
+}
+
+.container, .contenido-principal {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--color-white);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.seccion, .bloque {
+    margin-bottom: 40px;
+}
+
+.seccion h3, .bloque h3 {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-accent-gold);
+    padding-bottom: 10px;
+}
+
+.temas-grid, .lista-unidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tema-card, .unidad-item {
+    background-color: var(--color-neutral-warm);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tema-card h4, .unidad-item h4 {
+    color: var(--color-primary);
+    margin-top: 0;
+}
+
+.galeria, .coleccion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.trabajo, .actividad {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-neutral-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.trabajo img, .actividad img {
+    width: 100%;
+    height: auto;
+}
+
+.trabajo-info, .detalle-actividad {
+    padding: 15px;
+}
+
+.trabajo-info h4, .detalle-actividad h4 {
+    color: var(--color-primary);
+    margin: 0 0 10px;
+}
+
+.badge, .etiqueta {
+    background-color: var(--color-accent-lime);
+    color: var(--color-black);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+blockquote {
+    background-color: var(--color-neutral-warm);
+    border-left: 5px solid var(--color-primary);
+    margin: 20px 0;
+    padding: 15px;
+    font-style: italic;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid var(--color-neutral-dark);
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.destacado, .recomendacion {
+    background-color: var(--color-accent-gold);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.destacado h4, .recomendacion h4 {
+    color: var(--color-black);
+    margin-top: 0;
+}
+
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-neutral-dark);
+    margin: 40px 0;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

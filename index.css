@@ -1,0 +1,487 @@
+/* ==============================================
+   VARIABLES Y CONFIGURACIÓN MINIMALISTA
+============================================== */
+:root {
+  --color-primary: #6A4C93;
+  --color-neutral-dark: #7F8C8D;
+  --color-accent-gold: #D4AF37;
+  --color-accent-lime: #C1D72F;
+  --color-neutral-warm: #E6D3B9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  background-color: #FAFAFA;
+  min-height: 100vh;
+  padding: 0;
+  line-height: 1.6;
+  color: #2C2C2C;
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==============================================
+   ENCABEZADO MINIMALISTA
+============================================== */
+.cabecera-principal {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-neutral-dark) 100%);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cabecera-principal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+  opacity: 0.3;
+}
+
+.titulo-grande {
+  color: var(--color-neutral-warm);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.subtitulo {
+  color: var(--color-accent-lime);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+.descripcion-intro {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.descripcion-intro p {
+  color: var(--color-neutral-warm);
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.descripcion-intro strong {
+  color: var(--color-accent-gold);
+  font-weight: 600;
+}
+
+/* ==============================================
+   CONTENEDOR PRINCIPAL
+============================================== */
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* ==============================================
+   TÍTULOS DE SECCIÓN MINIMALISTAS
+============================================== */
+.titulo-seccion {
+  color: var(--color-primary);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  position: relative;
+  letter-spacing: -0.5px;
+}
+
+.titulo-seccion::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--color-accent-gold);
+  margin: 1.5rem auto 0;
+}
+
+/* ==============================================
+   GRID DE TARJETAS ASIMÉTRICO
+============================================== */
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .contenedor-tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tarjeta-materia:nth-child(7) {
+    grid-column: 1 / -1;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contenedor-tarjetas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .tarjeta-materia:nth-child(7) {
+    grid-column: 2 / 3;
+  }
+}
+
+/* ==============================================
+   TARJETAS MINIMALISTAS
+============================================== */
+.tarjeta-materia {
+  background: #FFFFFF;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #E8E8E8;
+  position: relative;
+}
+
+.tarjeta-materia::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent-gold), var(--color-accent-lime));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.tarjeta-materia:hover::before {
+  transform: scaleX(1);
+}
+
+.tarjeta-materia:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(106, 76, 147, 0.12);
+  border-color: var(--color-primary);
+}
+
+/* ==============================================
+   CONTENEDOR DE IMAGEN MINIMALISTA
+============================================== */
+.contenedor-imagen {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #F5F5F5 0%, #E8E8E8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.contenedor-imagen::after {
+  content: '◇';
+  position: absolute;
+  color: var(--color-neutral-dark);
+  font-size: 3rem;
+  opacity: 0.15;
+}
+
+.imagen-materia {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tarjeta-materia:hover .imagen-materia {
+  transform: scale(1.05);
+}
+
+/* ==============================================
+   CONTENIDO DE TARJETA
+============================================== */
+.enlace-materia {
+  display: block;
+  padding: 1.5rem 1.5rem 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  line-height: 1.4;
+}
+
+.enlace-materia:hover {
+  color: var(--color-accent-gold);
+}
+
+.descripcion-materia {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.descripcion-materia p {
+  color: var(--color-neutral-dark);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+/* ==============================================
+   DETALLES DESPLEGABLES
+============================================== */
+.detalles-extra {
+  margin-top: 1rem;
+  border-top: 1px solid #F0F0F0;
+  padding-top: 1rem;
+}
+
+.detalles-extra summary {
+  cursor: pointer;
+  color: var(--color-accent-gold);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  list-style: none;
+  user-select: none;
+}
+
+.detalles-extra summary::-webkit-details-marker {
+  display: none;
+}
+
+.detalles-extra summary::before {
+  content: '+ ';
+  margin-right: 0.5rem;
+  font-weight: 300;
+}
+
+.detalles-extra[open] summary::before {
+  content: '− ';
+}
+
+.detalles-extra p {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-neutral-dark);
+  line-height: 1.6;
+}
+
+/* ==============================================
+   SEPARADORES MINIMALISTAS
+============================================== */
+.separador {
+  margin: 4rem auto;
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-neutral-dark) 20%,
+    var(--color-neutral-dark) 80%,
+    transparent
+  );
+  opacity: 0.2;
+  max-width: 400px;
+}
+
+/* ==============================================
+   SECCIÓN INFORMATIVA MINIMALISTA
+============================================== */
+.seccion-info {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #E8E8E8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.seccion-info h3 {
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+.seccion-info p {
+  color: var(--color-neutral-dark);
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.seccion-info em {
+  color: var(--color-accent-gold);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* ==============================================
+   PIE DE PÁGINA MINIMALISTA
+============================================== */
+.pie-pagina {
+  background: var(--color-primary);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 4rem;
+  border-top: 3px solid var(--color-accent-gold);
+}
+
+.pie-pagina p {
+  color: var(--color-neutral-warm);
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+.pie-pagina p:first-child {
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.pie-pagina p:nth-child(2) {
+  color: var(--color-accent-gold);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+.pie-pagina small {
+  opacity: 0.8;
+}
+
+/* ==============================================
+   ANIMACIONES SUTILES
+============================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tarjeta-materia {
+  animation: fadeInUp 0.5s ease-out backwards;
+}
+
+.tarjeta-materia:nth-child(1) { animation-delay: 0.05s; }
+.tarjeta-materia:nth-child(2) { animation-delay: 0.1s; }
+.tarjeta-materia:nth-child(3) { animation-delay: 0.15s; }
+.tarjeta-materia:nth-child(4) { animation-delay: 0.2s; }
+.tarjeta-materia:nth-child(5) { animation-delay: 0.25s; }
+.tarjeta-materia:nth-child(6) { animation-delay: 0.3s; }
+.tarjeta-materia:nth-child(7) { animation-delay: 0.35s; }
+
+/* ==============================================
+   RESPONSIVE MINIMALISTA
+============================================== */
+@media (max-width: 768px) {
+  .cabecera-principal {
+    padding: 3rem 1.5rem 2.5rem;
+  }
+  
+  main {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .contenedor-tarjetas {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .seccion-info {
+    padding: 2rem 1.5rem;
+    margin: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-grande {
+    font-size: 2rem;
+  }
+  
+  .subtitulo {
+    font-size: 0.95rem;
+  }
+  
+  .descripcion-intro {
+    padding: 1.5rem;
+  }
+  
+  .contenedor-imagen {
+    height: 180px;
+  }
+}
+
+/* ==============================================
+   DETALLES TIPOGRÁFICOS
+============================================== */
+::selection {
+  background: var(--color-accent-gold);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--color-accent-gold);
+  color: white;
+}
+
+/* ==============================================
+   MEJORAS DE ACCESIBILIDAD
+============================================== */
+.enlace-materia:focus,
+.detalles-extra summary:focus {
+  outline: 2px solid var(--color-accent-lime);
+  outline-offset: 2px;
+}
+
+/* ==============================================
+   ESTADOS DE CARGA
+============================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
